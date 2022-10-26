@@ -17,7 +17,7 @@ const allUsers = asyncHandler(async (req, res) => {
 });
 
 const registerUser = asyncHandler(async (req, res) => {
-  const { name, email, password, pic } = req.body;
+  const { name, email, password, pic, description } = req.body;
 
   if (!name || !email || !password) {
     res.status(400);
@@ -36,6 +36,7 @@ const registerUser = asyncHandler(async (req, res) => {
     email,
     password,
     pic,
+    description,
   });
 
   if (user) {
@@ -72,27 +73,4 @@ const authUser = asyncHandler(async (req, res) => {
   }
 });
 
-const profileChange = asyncHandler(async (req, res) => {
-  const { userId, name, email, description, pic } = req.body;
-
-  const updatedProfile = await User.findByIdAndUpdate(
-    userId,
-    {
-      name,
-      email,
-      description,
-      pic,
-      token: generateToken(userId),
-    },
-    { new: true }
-  );
-
-  if (!updatedProfile) {
-    res.status(404);
-    throw new Error("User not found");
-  }
-
-  res.json(updatedProfile);
-});
-
-module.exports = { registerUser, authUser, allUsers, profileChange };
+module.exports = { registerUser, authUser, allUsers };

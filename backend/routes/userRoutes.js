@@ -4,7 +4,6 @@ const {
   registerUser,
   authUser,
   allUsers,
-  profileChange,
 } = require("../controllers/userControllers");
 const { protect } = require("../middlewares/authMiddleware");
 
@@ -17,6 +16,5 @@ const app = express();
 router.post("/", registerUser);
 router.get("/", protect, allUsers);
 router.post("/login", authUser);
-router.put("/profilechange", protect, profileChange);
 
 module.exports = router;

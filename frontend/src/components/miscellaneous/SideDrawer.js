@@ -29,7 +29,6 @@ import { useHistory } from "react-router-dom";
 import ChatLoading from "../ChatLoading";
 import axios from "axios";
 import UserListItem from "../UserAvatar/UserListItem";
-import ProfileChangeModal from "./ProfileChangeModal";
 import { getSender } from "../../config/ChatLogic";
 
 const SideDrawer = () => {
@@ -192,9 +191,6 @@ const SideDrawer = () => {
                 <ProfileModal user={user}>
                   <MenuItem>My Profile</MenuItem>
                 </ProfileModal>
-                <ProfileChangeModal user={user} setUser={setUser}>
-                  <MenuItem>Edit Profile</MenuItem>
-                </ProfileChangeModal>
               </MenuGroup>
               <Divider />
               <MenuGroup title="Account">
