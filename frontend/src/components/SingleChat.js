@@ -16,7 +16,6 @@ import UpdateGroupChatModal from "./miscellaneous/UpdateGroupChatModal";
 import axios from "axios";
 import ScrollableChats from "./ScrollableChats";
 import io from "socket.io-client";
-import Lottie from "react-lottie";
 import animationData from "../animations/77160-typing.json";
 
 const ENDPOINT = "https://konninit.herokuapp.com/";
@@ -218,13 +217,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
 
             <FormControl onKeyDown={sendMessage} isRequired>
               {isTyping ? (
-                <div>
-                  <Lottie
-                    options={defaultOptions}
-                    width={70}
-                    style={{ marginBottom: 0, marginLeft: 0 }}
-                  />
-                </div>
+                <div style={{ marginBottom: 0, marginLeft: 0 }}>Typing...</div>
               ) : (
                 <></>
               )}
