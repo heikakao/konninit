@@ -16,7 +16,6 @@ import UpdateGroupChatModal from "./miscellaneous/UpdateGroupChatModal";
 import axios from "axios";
 import ScrollableChats from "./ScrollableChats";
 import io from "socket.io-client";
-import animationData from "../animations/77160-typing.json";
 
 const ENDPOINT = "https://konninit.herokuapp.com/";
 var socket, selectedChatCompare;
@@ -35,13 +34,6 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
     notifications,
     setNotifications,
   } = ChatState();
-
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: animationData,
-    renderedSettings: { preserveAspectRatio: "xMidYMid slice" },
-  };
 
   const toast = useToast();
 
@@ -217,7 +209,11 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
 
             <FormControl onKeyDown={sendMessage} isRequired>
               {isTyping ? (
-                <div style={{ marginBottom: 0, marginLeft: 0 }}>Typing...</div>
+                <div
+                  style={{ marginBottom: 3, marginLeft: 3, fontSize: "14px" }}
+                >
+                  Typing...
+                </div>
               ) : (
                 <></>
               )}
