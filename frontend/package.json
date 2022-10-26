@@ -4,6 +4,10 @@
   "private": true,
   "proxy": "http://127.0.0.1:5000",
   "homepage": ".",
+  "engines": {
+    "node": "16.17.0",
+    "npm": "8.15.0"
+  },
   "dependencies": {
     "@chakra-ui/icons": "^2.0.11",
     "@chakra-ui/react": "^2.3.6",
