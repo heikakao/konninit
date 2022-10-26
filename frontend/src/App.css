@@ -1,0 +1,96 @@
+.App {
+  min-height: 100vh;
+  font-family: Helvetica;
+  background: #23242a;
+  font-size: 62.5%;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+.box {
+  position: relative;
+  width: 32rem;
+  height: 43rem;
+  background: #1c1c1c;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.box::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 32rem;
+  height: 43rem;
+  background: linear-gradient(0deg, transparent, #d1603d, #d1603d);
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+}
+
+.box::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 32rem;
+  height: 43rem;
+  background: linear-gradient(0deg, transparent, #d1603d, #d1603d);
+  transform-origin: bottom right;
+  animation: animate 6s linear infinite;
+  animation-delay: -3s;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.form {
+  position: absolute;
+  inset: 2px;
+  border-radius: 8px;
+  z-index: 1;
+  background: #28292d;
+}
+
+.form-text-box {
+  padding: 1.6rem;
+}
+
+.form-title {
+  font-size: 2rem;
+  text-align: center;
+  color: #d1603d;
+  letter-spacing: 1.5px;
+}
+
+.side-menu {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.username {
+  font-weight: 600;
+}
+
+.useremail {
+  font-weight: normal;
+}
+
+.rename-form {
+  width: 100%;
+}
+
+.send-message {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
